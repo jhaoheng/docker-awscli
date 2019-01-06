@@ -22,7 +22,7 @@
 }
 ```
 
-4. 新增完畢後, 請 copy `Role ARN` 貼到 demo.json 中的 executionRoleArn 位置
+4. 新增完畢後, 請 copy `Role ARN` 貼到 task.json 中的 executionRoleArn 位置
 
 # 建立 cluster
 - 查看 : `aws ecs list-clusters`
@@ -43,10 +43,10 @@
 - 任務應該使用的 IAM 角色
 
 ## 確定任務內容
-參考 demo.json
+參考 task.json
 
 ## 設定任務
-> 若用 docker, 要將 demo.json 掛載 volume
+> 若用 docker, 要將 task.json 掛載 volume
 
 - 執行
 	- `aws ecs register-task-definition --cli-input-json file:///home/test.json`
@@ -57,7 +57,7 @@
 > 必須確認 executionRoleArn 的權限, 若無適當權限,則 cluster 中 service 在建立 task 時會失敗
 
 - `aws ecs create-service --cluster {cluster-name} --service-name {service-name} --task-definition {task-name}:{revision} --desired-count 1 --launch-type "FARGATE" --network-configuration "awsvpcConfiguration={subnets=[subnet-34c09272],securityGroups=[sg-5f8e0e39], assignPublicIp=ENABLED}"`
-    - 因 demo.json 設定檔使用 awsvpc, 故這邊要設定 awsvpcConfiguration
+    - 因 task.json 設定檔使用 awsvpc, 故這邊要設定 awsvpcConfiguration
         - list subnets
             - `docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws ec2 describe-subnets`
         - list securityGroups

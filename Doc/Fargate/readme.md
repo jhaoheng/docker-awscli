@@ -8,7 +8,7 @@
 2. 選擇 role, 並建立 role 
     - 選擇 AWS Service
     - service 選擇 Elastci Container Service
-    - case 選擇 Elastci Container Service
+    - case 選擇 EC2 Role for Elastic Container Service
 3. 建立完成後, 至該 role 中 Trust relationships -> Edit Trust relationship, 新增
 
 ```

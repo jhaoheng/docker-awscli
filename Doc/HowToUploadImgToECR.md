@@ -4,9 +4,9 @@
 2. 建立 image, 並且 tag = `{repositoryUri}/{image-name}`
 3. docker login with AWS Registry
 	- 方法一 : 
-		- `docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws ecr get-login --no-include-email --region us-east-1`
+		- `docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws ecr get-login --no-include-email`
 		- 返回值是 docker login 的指令, 直接使用
 	- 方法二 : 
-		- `$(docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws ecr get-login --no-include-email --region us-east-1)`
+		- `$(docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws ecr get-login --no-include-email)`
 4. 推送
 	- `docker push {repositoryUri}/{image-name}:latest`

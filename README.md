@@ -10,25 +10,29 @@
 2. Update awsSet
     - config
     - credentials
-3. `docker run --volume ~/.awsSet:/root/.aws orbweb/aws:latest aws [some_command]`
+3. use `docker run --volume ~/.awsSet:/root/.aws orbweb/aws:latest aws [some_command]`
+
+## Use alias to run docker aws container
+1. `alias dockerawscli="docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest"`
+2. Than use : `dockerawscli aws help` or `dockerawscli aws --version`
 
 # How To Use
 
 ## Version
-- `docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws --version`
+- `aws:latest aws --version`
 - Update version, just go to docker hub and build this Dockerfile, it will help you to build the latest version.
 
 ## Help
-- `docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws help`
+- `aws:latest aws help`
 
 ## Configure List
-- `docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws configure list`
+- `aws configure list`
 
 ## EC2 : describe-regions
-- `docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws ec2 describe-regions --output table`
+- `aws ec2 describe-regions --output table`
 
 ## EC2 : describe-availability-zones
-- `docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest aws ec2 describe-availability-zones --output table`
+- `aws ec2 describe-availability-zones --output table`
 
 ## Getting started with the AWS CLI and s3tools
 For documentation on the AWS CLI, see the [AWS command line interface documentation](http://aws.amazon.com/documentation/cli/) and the [aws-cli GitHub page](https://github.com/aws/aws-cli). For S3 tools, see the [S3 tools documentation](http://s3tools.org/usage).

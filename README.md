@@ -1,3 +1,9 @@
+
+![docker-io-image](https://dockeri.co/image/jhaoheng/docker-awscli)
+
+[![docker-automate](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://cloud.docker.com/repository/registry-1.docker.io/jhaoheng/docker-awscli)
+
+
 # What is docker-aws
 
 [Docker](https://docker.io) image for running the [Amazon Web Services Command Line Interface](http://aws.amazon.com/cli/) and [s3cmd](https://github.com/s3tools/s3cmd). It creates a [Docker](https://docker.io) image containing all dependencies needed to run `aws` and `s3cmd`. That way, you can run these tools in a [Docker](https://docker.io) container without setting the dependencies on the host system.

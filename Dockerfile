@@ -17,5 +17,5 @@ RUN pip3 install awscli --upgrade --user && \
     awscli --version
 
 # Set Aws cli completer
-RUN ln -s /root/.local/bin/aws_completer /usr/bin/aws_completer && \
-    complete -C aws_completer aws
+RUN ln -s /root/.local/bin/aws_completer /usr/bin/aws_completer
+RUN echo "source /root/.local/bin/aws_bash_completer" >> /root/.bashrc

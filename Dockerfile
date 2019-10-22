@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install -y curl python3
+RUN apt-get install -y curl python3 groff
 
 # install pip3 & check version
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \

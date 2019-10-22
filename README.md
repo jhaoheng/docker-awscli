@@ -15,11 +15,11 @@
 - `docker run --rm awscli aws help`
 
 ## AWS Credentials
-1. `cp -R awsSet.tmp awsSet`
-2. Update awsSet
+1. `cp -r aws.configure .aws`
+2. Update `.aws/`
     - config
     - credentials
-3. use `docker run --volume ~/.awsSet:/root/.aws awscli aws [some_command]`
+3. use `docker run --volume $(pwd)/.aws:/root/.aws awscli aws [some_command]`
 
 ## Use alias to run docker aws container
 1. `alias dockerawscli="docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest"`

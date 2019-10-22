@@ -1,7 +1,10 @@
 
 ![docker-io-image](https://dockeri.co/image/jhaoheng/docker-awscli)
 
-[![docker-automate](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://cloud.docker.com/repository/registry-1.docker.io/jhaoheng/docker-awscli)
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/jhaoheng/docker-awscli)
+
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/jhaoheng/docker-awscli)
+
 
 
 # What is docker-aws

@@ -1,3 +1,4 @@
 awsSet/*
 Doc/Fargate/task.json
 Doc/Fargate/service.json
+Dockerfile.tmp

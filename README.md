@@ -5,32 +5,25 @@
 
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/jhaoheng/docker-awscli)
 
-
-
-# Usage this from DockerHub
-- `docker run --rm jhaoheng/docker-awscli aws --version`
-
 ## Build & Usage
 - `docker build -t awscli:latest .`
 - `docker run --rm awscli aws help`
 
+## Run from docker hub
+- `docker run --rm jhaoheng/docker-awscli aws --version`
+
 ## AWS Credentials
-1. `cp -r aws.configure .aws`
-2. Update `.aws/`
-    - config
-    - credentials
-3. use `docker run --volume $(pwd)/.aws:/root/.aws awscli aws configure list`
+- Use File : https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html
+- Use Env : https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-envvars.html
+
+## Run with aws credentials file
+- use `docker run --volume $(pwd)/.aws:/root/.aws awscli aws configure list`
 
 ## Use alias to run docker aws container
 1. `alias dockerawscli="docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest"`
 2. Than use : `dockerawscli aws help` or `dockerawscli aws --version`
 
-# How To Use
-> Below cmd should add prefix `docker run --rm awscli {cmd}`
-
-## Version
-- `aws --version`
-- Update version, just go to docker hub and build this Dockerfile, it will help you to build the latest version.
+# Basic operation of aws cli
 
 ## Help
 - `aws help`

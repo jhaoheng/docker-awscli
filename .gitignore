@@ -1,5 +1,7 @@
-awsSet/*
-Doc/Fargate/task.json
-Doc/Fargate/service.json
+Doc/*
 Dockerfile.tmp
 .aws
+
+deploy/
+
+test/*

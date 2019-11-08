@@ -1,6 +1,0 @@
-# Set Config
-
-# Set Credentials
-
-- aws_access_key_id = {your_key_id}
-- aws_secret_access_key = {your_secret_access_key}

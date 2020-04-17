@@ -17,7 +17,7 @@
 - Use Env : https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-envvars.html
 
 ## Run with aws credentials file
-- use `docker run --volume $(pwd)/.aws:/root/.aws awscli aws configure list`
+- use `docker run --rm -v $(pwd)/.aws:/root/.aws docker-awscli aws configure list`
 
 ## Use alias to run docker aws container
 1. `alias dockerawscli="docker run --rm -i -v $(pwd)/awsSet:/root/.aws aws:latest"`
@@ -48,3 +48,10 @@
 - US West (N. California) : us-west-1
 - Asia Pacific (Singapore) : ap-southeast-1
 - Asia Pacific (Tokyo) : ap-northeast-1
+
+# Service Endpoints and Quotas
+> https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html
+
+- 有個類型的 aws endpoint 可供搜尋
+
+

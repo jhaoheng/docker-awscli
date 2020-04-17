@@ -1,21 +1,9 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-RUN apt-get update
-RUN apt-get install -y curl python3 groff
+RUN apt-get update && apt-get install -y curl git vim wget procps unzip
 
-# install pip3 & check version
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python3 get-pip.py && \
-    rm get-pip.py && \
-    which pip3 && \
-    pip3 list -o
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    ./aws/install && \
+    aws --version
 
-# install awscli
-RUN pip3 install awscli --upgrade --user && \
-    ln -s /root/.local/bin/aws /usr/bin/awscli && \
-    ln -s /root/.local/bin/aws /usr/bin/aws && \
-    awscli --version
-
-# Set Aws cli completer
-RUN ln -s /root/.local/bin/aws_completer /usr/bin/aws_completer
-RUN echo "source /root/.local/bin/aws_bash_completer" >> /root/.bashrc

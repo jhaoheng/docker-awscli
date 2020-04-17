@@ -8,3 +8,5 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     rm awscliv2.zip && \
     aws --version
 
+# Set Aws cli completer
+RUN complete -C '/usr/local/bin/aws_completer' aws

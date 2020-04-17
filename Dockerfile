@@ -9,4 +9,4 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     aws --version
 
 # Set Aws cli completer
-RUN complete -C '/usr/local/bin/aws_completer' aws
+RUN echo "complete -C '/usr/local/bin/aws_completer' aws" >> /root/.bashrc
